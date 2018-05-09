@@ -5,7 +5,7 @@ package binarySearch;
  */
 public class searchInsertProblem {
 
-       private static int searchInsert(int[] nums, int i, int n, int target) {
+       private static int searchInsert(int[] nums,  int n, int target) {
             //corner case
             int start = 0, end = nums.length ; int mid = 0;
             if(nums == null || nums.length == 0) return -1;
@@ -29,7 +29,7 @@ public class searchInsertProblem {
             n = arr.length;
             key = 15;
 
-            System.out.println("Index: " + searchInsert(arr,0, n, key) );
+            System.out.println("Index: " + searchInsert(arr, n, key) );
         }
     }
 
