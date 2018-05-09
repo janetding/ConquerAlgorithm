@@ -13,15 +13,7 @@ public class VersionControl {
         }
 
         int target = 48;
-
-//        int index = myBinarySearch1(arr, target);
-
-//        if (index == -1) System.out.println("Not find.");
-//        else System.out.println("The index of target " + target + " is " + index);
-//
-//        System.out.println("Search " + count + " times.");
-
- int         index = myBinarySearch3(arr, target);
+         int index = myBinarySearch3(arr, target);
          if (index == -1) System.out.println("Not find.");
          else System.out.println("The index of target " + target + " is " + index);
          System.out.println("Search " + count + " times.");
