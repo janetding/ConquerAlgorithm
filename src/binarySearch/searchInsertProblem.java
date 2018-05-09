@@ -24,7 +24,7 @@ public class searchInsertProblem {
 
         /* Driver program to test above function */
 
-            int arr[] = {5, 6, 7, 8, 9, 10};
+            int arr[] = {2, 4, 6, 8, 10};
             int n,key;
             n = arr.length;
             key = 15;
