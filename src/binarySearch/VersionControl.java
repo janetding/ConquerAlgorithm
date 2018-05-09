@@ -3,6 +3,7 @@ package binarySearch;
 public class VersionControl {
 
     static int count = 0;
+    public double[] versions;
 
     public static void main(String[] args) {
         int[] arr = new int[100];
