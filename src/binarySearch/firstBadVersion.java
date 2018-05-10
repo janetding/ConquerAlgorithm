@@ -1,7 +1,10 @@
 package binarySearch;
+/**
+ * Created by janet1 on 5/9/18.
+ */
+public class firstBadVersion{
 
-public class firstBadVersion {
-	private Character[] versions;
+    private Character[] versions;
 
     private firstBadVersion(Character[] versions) {
         this.versions = versions;
@@ -35,6 +38,4 @@ public class firstBadVersion {
         else System.out.println("The first bad version is at: " + index);
         }
     }
-
-
 
