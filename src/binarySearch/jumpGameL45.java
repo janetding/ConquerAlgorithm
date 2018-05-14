@@ -9,21 +9,35 @@ import java.io.InputStreamReader;
  */
 public class jumpGameL45 {
     public int jump(int[] nums) {
-        if (nums == null || nums.length == 0) return Integer.MAX_VALUE;
-        int[] dp = new int[nums.length];
-        dp[nums.length - 1] = 0;
-        for (int i = nums.length - 2; i >= 0; i--) {
-            // set to integer max
-            dp[i] = Integer.MAX_VALUE;
-            for (int j = i + 1; j <= i + nums[i]; j++) {
-                if (j < nums.length && dp[j] != Integer.MAX_VALUE) {
-                    dp[i] = Math.min(dp[i], dp[j] + 1);
+//        if (nums == null || nums.length == 0) return Integer.MAX_VALUE;
+//        int[] dp = new int[nums.length];
+//        dp[nums.length - 1] = 0;
+//        for (int i = nums.length - 2; i >= 0; i--) {
+//            // set to integer max
+//            dp[i] = Integer.MAX_VALUE;
+//            for (int j = i + 1; j <= i + nums[i]; j++) {
+//                if (j < nums.length && dp[j] != Integer.MAX_VALUE) {
+//                    dp[i] = Math.min(dp[i], dp[j] + 1);
+//                }
+//            }
+//        }
+//
+//        return dp[0];
+
+//similar like L55, jumpGame
+            int sc = 0;
+            int e = 0;
+            int maxRange = 0;
+            for(int i=0; i<nums.length-1; i++) {
+                maxRange = Math.max(maxRange, i+nums[i]);
+                if( i == e ) {
+                    sc++;
+                    e = maxRange;
                 }
             }
+            return sc;
         }
 
-        return dp[0];
-    }
 
 
     public static int[] stringToIntegerArray(String input) {
