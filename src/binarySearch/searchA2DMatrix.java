@@ -17,6 +17,10 @@ public class searchA2DMatrix {
     public static boolean searchMatrix(int[][] matrix, int target) {
 //corner case
         if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
+           //* 在stack里分配了matrix但不指向任何东西
+            //   {}   有matrix 有指向 但object 没任何东西
+            //          {null, ....} 第一个是null 后面为空； 2层dereference
+            // {{},....} dereference 后有东西，为空值
             return false;
         }
         int rows = matrix.length, cols = matrix[0].length;
