@@ -33,8 +33,6 @@ public class validAnagramTwo {
         System.out.println(validAnagram(s1, s3));
         System.out.println(validAnagram(s1, s2));
 
-//        System.out.println(new String.validAnagram(s1, s3));
-
     }
 }
 
