@@ -54,16 +54,15 @@ public class InsertionSortList {
         display(head);
         System.out.println();
 
-        System.out.println("After sorting the linked list is expected to be: " + "4->3->2->1");
+        System.out.println("After sorting the linked list is: ");
 
-        head = insertionSortList(head);
+head = insertionSortList(head);
+        display(insertionSortList(head));
 
-        display(head);
-
-        int[] arr = {1,2,3};
-
-        ListNode head1 = ListNode.build(arr);
-        head1.size();
+//        int[] arr = {1,2,3};
+//
+//        ListNode head1 = ListNode.build(arr);
+//        head1.size();
 
     }
 
