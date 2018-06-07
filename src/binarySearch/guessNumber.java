@@ -1,56 +1,34 @@
 package binarySearch;
-import java.util.Scanner;
+package binarySearch;
+
+import java.util.ArrayList;
 
 /**
- * Created by janet1 on 5/9/18.
+ * Created by janet1 on 6/6/18.
  */
-public class guessNumber{
-    private static int guessNumbers(int input){
-        int guess = 1;
+public class findValleyTwo {
+    public static void main(String[] args) {
+        int[] heights = {2, 1, 4, 5, 3, 7};
+        ArrayList<Integer> valleys = findValley (heights);
+        System.out.println("The valleys are at " + valleys);
+    }
 
-        int left = 0, right;
 
-        while (guess < input){
+    private static ArrayList<Integer> findValley(int[] heights) {
+        if (heights == null || heights.length == 0 ) return null;
 
-            if (guess < input){
-                left = guess;
-                guess *= 2;
+        ArrayList<Integer> valleys = new ArrayList<>();
+        int valley =0;
+        for (int i = 0; i < heights.length ; i++) {
+            //at the beginning position; ascending order
+            if(i == 0 && heights[i] < heights[i+1]) valleys.add(i-1);
+            // at the last position; descending order
+            if(i == heights.length-1 && heights[i-1] > heights[i]) valleys.add(i);
+            //normal situation
+            if (i != 0 && i!= heights.length-1){
+                if (heights[i-1] > heights[i] && heights[i] < heights[i+1]) valleys.add(i);
             }
         }
-        right = guess;
-        return myBinarySearch(input,left,right);
-    }
-
-    private static int myBinarySearch(int input, int left, int right) {
-        int mid = 0;
-
-        while (left < right){
-            mid = left + (right - left) / 2;
-
-            if(mid == input) return mid;
-            if(mid < input) left = mid;
-            else right = mid;
-        }
-
-        return mid;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Please enter an integer.");
-        int input = sc.nextInt();
-
-        System.out.println("Input number is: " + input);
-
-        int guessedNum = guessNumbers(input);
-        System.out.println("The guessed number is: " + guessedNum);
-
-        if(input == guessNumbers(input)){
-            System.out.println("Guess correct!");
-        }else {
-            System.out.println("Wrong guess.");
-        }
-
+        return valleys;
         }
     }
