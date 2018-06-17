@@ -2,31 +2,26 @@ package Greedy;
 
 /**
  * Created by janet1 on 6/10/18.
+ * time complexity is arr.length - 1;
  */
 public class containerWithMostWater {
-   private static int maxArea(int[] heights) {
-        int start = 0;
-        int end = heights.length - 1;
-        int area ;
-        int result = Integer.MIN_VALUE; // initialize result w/ Integer.MIN_VALUE;
-
-        while (start < end) {
-            //heights should choose the min, Math.min(heights[end] , heights[start])
-            // as you are not sure, height[end] or height[start], which one is min
-            area = Math.min(heights[end], heights[start]) * (end - start);
+    private static int maxArea(int[] height) {
+        int left = 0;
+        int right = height.length - 1;
+        int area = 0;
+        int result = Integer.MIN_VALUE;
+        while (left < right) {
+            area = Math.min(height[right], height[left]) * (right - left);
             result = Math.max(result, area);
-            if (heights[start] <= heights[end]) {
-                start++;
-            } else {
-                //heights[start] > heights[end]
-                end--;
-            }
+
+            if (height[left] < height[right]) left++;
+            else right--;
         }
-        return result;
+    return result;
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 4, 5};
+        int[] arr = {2, 3, 4, 5, 7};
         System.out.println(maxArea(arr));
     }
 }
