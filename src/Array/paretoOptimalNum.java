@@ -22,8 +22,9 @@ public class paretoOptimalNum {
                     } else if (p1.getX() > p2.getX())
 
                         return p1.getY() < p2.getY() ? 1 : -1;
-                    } else {
-                        return p1.getX() < p2.getX() ? 1 : -1;
+                }
+                else
+                {return p1.getX() < p2.getX() ? 1 : -1;
                     }
 
                 return 0;
