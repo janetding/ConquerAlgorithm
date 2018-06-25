@@ -40,7 +40,10 @@ public class maxAreaIsland {
                 {0,0,0,0,0,0,0,1,1,1,0,0,0},
                 {0,0,0,0,0,0,0,1,1,0,0,0,0}};
 
+        int[][] grid1 = {{0,0,0,0,0,0,0,0}};
+
         maxAreaIsland ma = new maxAreaIsland();
         System.out.println(ma.maxAreaOfIsland(grid));
+        System.out.println(ma.maxAreaOfIsland(grid1));
     }
 }
