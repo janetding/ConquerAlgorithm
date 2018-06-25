@@ -7,14 +7,17 @@ package dynamicProgramming;
 class paintHouse  {
    private static int minCost(int[][] costs) {
 
-        if(costs == null || costs.length == 0) return 0;
-        for(int i = 1; i < costs.length ; i++){
-            for (int color =0; color < 3; color ++){
-                costs[i][color] += Math.min(costs[i-1][(color+1) %3], costs[i-1][(color+2) %3]);
-            }
-        }
-        int n = costs.length -1;
-        return Math.min(Math.min(costs[n][0],costs[n][1]), costs[n][2]);
+      if(costs == null || costs.length == 0) return  0;
+      for (int i = 1; i < costs.length; i ++){
+          for (int color = 0; color < 3; color++) {
+              //modular 3 to optimize
+              costs[i][color] += Math.min(costs[i-1][(color+1)%3], costs[i-1][(color +2)%3]);
+
+          }
+      }
+      int n = costs.length -1;
+       //Math.min can only compare within two int variable
+       return Math.min(Math.min(costs[n][0], costs[n][1]),costs[n][2]);
     }
 
 
