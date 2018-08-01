@@ -8,17 +8,18 @@ import java.util.LinkedList;
  * Created by janet1 on 7/14/18.
  */
 public class LinkedListCycleStart {
-    public static ListNode hasCycle(ListNode head){
+    public static ListNode hasCycle(ListNode head) {
         if (head == null) return null;
         ListNode quick = head;
         ListNode slow = head;
-        while(quick.next != null && quick.next.next != null) {
+        ListNode cur = head;
+        while (quick.next != null && quick.next.next != null) {
             quick = quick.next.next;
             slow = slow.next;
-            if (quick == slow) {
-                while (head != slow){
+            if (quick == slow) {  // find the first intersection point
+                while (cur != slow) {
                     slow = slow.next;
-                    head = head.next;
+                    cur = cur.next;
                 }
                 return slow;
             }
@@ -44,14 +45,17 @@ public class LinkedListCycleStart {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        node5.next = head;
+        node5.next = node3;
 
-        System.out.println(hasCycle(head));
+        ListNode cycleStartNode = hasCycle(head);
 
-
-
+        if (cycleStartNode == null) {
+            System.out.println("No cycle exists.");
+        } else {
+            System.out.println(cycleStartNode.val);
         }
-
     }
+
+}
 
 
