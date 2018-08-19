@@ -6,7 +6,7 @@ public class firstBadVersion{
 
     private Character[] versions;
 
-    private firstBadVersion(Character[] versions) {
+    firstBadVersion(Character[] versions) {
         this.versions = versions;
     }
 
@@ -14,6 +14,8 @@ public class firstBadVersion{
         if (this.versions[version - 1] == 'B') return true;
         else return false;
     }
+
+
 //    public class BadVersion extends VersionControl {
         public int firstBadVersion1(int n) {
             int left =1, right = n,  mid ;

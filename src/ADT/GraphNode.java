@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class GraphNode {
     int value;
     ArrayList<GraphNode> neighbors; //hashmap
+   // ArrayList<Pair> neighbors; //带权重否
 
     boolean visited;
 
@@ -16,3 +17,4 @@ public class GraphNode {
             neighbors = new ArrayList<GraphNode>();
     }
 }
+//class Pair -> { GraphNode, Weight}
