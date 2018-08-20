@@ -7,6 +7,7 @@ public class firstBadVersion{
     private Character[] versions;
 
     firstBadVersion(Character[] versions) {
+
         this.versions = versions;
     }
 

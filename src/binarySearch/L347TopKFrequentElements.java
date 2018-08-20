@@ -39,7 +39,9 @@ public class L347TopKFrequentElements {
         Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
 
         for (int n : nums) {
-            frequencyMap.put(n, frequencyMap.getOrDefault(n, 0) + 1);
+            int count = frequencyMap.getOrDefault(n, 0);
+            frequencyMap.put(n, count+1);
+//            frequencyMap.put(n, frequencyMap.getOrDefault(n, 0) + 1);
         }
 
         for (int key : frequencyMap.keySet()) {
@@ -61,12 +63,13 @@ public class L347TopKFrequentElements {
     }
 
 
+
     public static void main(String[] args) {
 
         int[] arrayOne = {1,1, 2,2,3};
         int kOne = 2;
-        int[] arrayTwo = {1};
-        int kTwo = 1;
+        int[] arrayTwo = {1,77,77,77,32,32,32};
+        int kTwo = 2;
         L347TopKFrequentElements frequentElements = new L347TopKFrequentElements();
 
         System.out.println((frequentElements.topKFrequent(arrayOne,kOne)));
