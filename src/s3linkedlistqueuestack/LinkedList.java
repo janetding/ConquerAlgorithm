@@ -10,10 +10,10 @@ public class LinkedList {
         /* Linked list Node*/
         class Node
         {
-            int data;
+            int value;
             Node next;
-            Node(int d){
-                data = d;
+            Node(int val){
+                value = val;
                 next = null;
             }
         }
@@ -92,7 +92,7 @@ public class LinkedList {
             Node temp = head;
             while (temp != null)
             {
-                System.out.print(temp.data+" ");
+                System.out.print(temp.value+" ");
                 temp = temp.next;
 
             }

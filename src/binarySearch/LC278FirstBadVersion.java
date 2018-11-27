@@ -3,6 +3,7 @@ package binarySearch;
 /**
  * Created by janet1 on 8/17/18.
  */
+
 public class LC278FirstBadVersion {
     private Character[] versions;
     public LC278FirstBadVersion(Character[] versions){

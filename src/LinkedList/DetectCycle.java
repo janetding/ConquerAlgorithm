@@ -4,6 +4,9 @@ import ADT.ListNode;
 /**
  * Created by janet1 on 7/14/18.
  */
+
+
+
 public class DetectCycle {
     static boolean hasCycle(ListNode head){
         if(head == null) return false ;

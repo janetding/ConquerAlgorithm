@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class GraphNode {
     int value;
     ArrayList<GraphNode> neighbors; //hashmap
-   // ArrayList<Pair> neighbors; //带权重否
+   // ArrayList<Pair> neighbors; //权重or not
 
     boolean visited;
 

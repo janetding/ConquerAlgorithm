@@ -23,11 +23,27 @@ import java.util.Scanner;
 
 // Definition for singly-linked list
 public class ListNode {
-    public int val;
-    public ListNode next;
-    public ListNode(int x){
-        val = x;
-    }
+//    public int val;
+//    public ListNode next;
+//    public ListNode(int x){
+//        val = x;
+//    }
+//
+//    public class ListNode {
+        public int val;
+        public ListNode next;
+
+        public ListNode(int v) {
+            this.val= v;
+            this.next = null;
+        }
+
+        public ListNode() {
+            this(0);
+        }
+
+
+
 
     public static void print(ListNode head) {
         if(head == null)
@@ -41,7 +57,7 @@ public class ListNode {
         System.out.println();
     }
 
-    public static ListNode generateLinkedList() {
+    public static ListNode generateLinkedList(String abc) {
         System.out.println("Please enter a binary number");
         String input = new Scanner(System.in).next();
 
